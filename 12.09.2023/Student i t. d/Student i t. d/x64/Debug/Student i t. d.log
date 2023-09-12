@@ -1,0 +1,10 @@
+﻿  Student i t. d.cpp
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u041D' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0430' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0439' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0441' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0442' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0440' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
+C:\Users\Vavan_228\source\repos\Student i t. d\Student i t. d\Student i t. d.cpp(35,13): warning C4566: character represented by universal-character-name '\u0438' cannot be represented in the current code page (1252)
+  Student i t. d.vcxproj -> C:\Users\Vavan_228\source\repos\Student i t. d\x64\Debug\Student i t. d.exe
