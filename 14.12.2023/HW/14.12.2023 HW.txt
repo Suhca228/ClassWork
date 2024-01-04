@@ -1,0 +1,48 @@
+1.
+[](int a, int b) { return a + b; }
+
+2.
+[](int a) { return a % 2 == 0; }
+
+3.
+[](int a) { return a * a; }
+
+4.
+[](int a) { return to_string(a); }
+
+5.
+[](const string& a, const string& b) { return a < b; }
+
+6.
+[](const string& str, char c) {
+  for (int i = 0; i < str.size(); i++) {
+    if (str[i] == c) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+7.
+[](const Product& a, const Product& b) { return a.price() < b.price(); }
+
+8.
+[](const Product& product) { return product.quantity() > 10; }
+
+9.
+[](const vector<int>& numbers) {
+  int sum = 0;
+  for (int number : numbers) {
+    sum += number;
+  }
+  return sum / numbers.size();
+}
+
+10.
+[](const vector<int>& numbers) {
+  vector<string> strings;
+  for (int number : numbers) {
+    strings.push_back(to_string(number));
+  }
+  return strings;
+}

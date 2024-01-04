@@ -1,0 +1,86 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+class Product {
+public:
+    Product(const string& name, int id, int price, int quantity)
+        : name_(name), id_(id), price_(price), quantity_(quantity) {}
+
+    const string& name() const { return name_; }
+    int id() const { return id_; }
+    int price() const { return price_; }
+    int quantity() const { return quantity_; }
+
+    void set_price(int price) { price_ = price; }
+    void set_quantity(int quantity) { quantity_ = quantity; }
+
+    bool operator==(const Product& other) const { return name_ == other.name_ && id_ == other.id_; }
+    bool operator<(const Product& other) const { return name_ < other.name_; }
+
+private:
+    string name_;
+    int id_;
+    int price_;
+    int quantity_;
+};
+
+ostream& operator<<(ostream& os, const Product& product) {
+    os << "Назва: " << product.name() << ", ID: " << product.id() << ", Ціна: " << product.price() << ", Кількість: " << product.quantity();
+    return os;
+}
+
+class Warehouse {
+public:
+    Warehouse() {}
+
+    void add_product(const Product& product) { products_.push_back(product); }
+    void remove_product(int id) {
+        for (auto it = products_.begin(); it != products_.end(); it++) {
+            if (it->id() == id) {
+                products_.erase(it);
+                break;
+            }
+        }
+    }
+
+    int quantity() const { return products_.size(); }
+
+    void filter_by_price(int min_price, int max_price) {
+        products_.erase(
+            remove_if(products_.begin(), products_.end(), [min_price, max_price](const Product& product) { return product.price() < min_price || product.price() > max_price; }),
+            products_.end());
+    }
+
+    void filter_by_quantity(int min_quantity, int max_quantity) {
+        products_.erase(
+            remove_if(products_.begin(), products_.end(), [min_quantity, max_quantity](const Product& product) { return product.quantity() < min_quantity || product.quantity() > max_quantity; }),
+            products_.end());
+    }
+
+    void print_all() const {
+        for (const auto& product : products_) {
+            cout << product << endl;
+        }
+    }
+
+private:
+    vector<Product> products_;
+};
+
+int main() {
+    Warehouse warehouse;
+
+    warehouse.add_product(Product("Книга", 1, 100, 10));
+    warehouse.add_product(Product("Ручка", 2, 50, 20));
+    warehouse.add_product(Product("Олівець", 3, 30, 30));
+
+    warehouse.filter_by_price(50, 100);
+
+    warehouse.print_all();
+
+    return 0;
+}
